@@ -13,66 +13,108 @@
     var slide8 = home.Slide8 != null ? home.Slide8.Url() : String.Empty;
 }
 
-
+<div class="main-carousel">
+<div class="center-div">
 <section class="carousel">
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide1')">
+    <section class="slides img1">
+        <img src="@slide1"/>
         <div class="section__hero-content-first-slide">
             <h1>@home.FirstTextSlide1</h1>
             <h1>@home.SecondTextSlide1</h1>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide2')">
-        <div class="section__hero-content">
+    <section class="slides img2">
+        <img src="@slide2"/>
+        <div class="content-slide">
             <h1>@home.TextSlide2</h1>
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/explorer/?intcmp=bb-fph-hp-fph-vhp-ford%20explorer-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide3')">
-        <div class="section__hero-content">
+    <section class="slides img3">
+         <img src="@slide3"/>
+        <div class="content-slide">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/f150/?intcmp=bb-fph-hp-fph-vhp-ford%20f150-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide4')">
-        <div class="section__hero-content">
+    <section class="slides img4">
+         <img src="@slide4"/>
+        <div class="content-slide">
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/territory/?intcmp=bb-fph-hp-fph-vhp-ford%20territory-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide5')">
-        <div class="section__hero-content">
+    <section class="slides img5">
+         <img src="@slide5"/>
+        <div class="content-slide">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/raptor/?intcmp=bb-fph-hp-fph-vhp-ford%20raptor-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide6')">
-        <div class="section__hero-content">
+    <section class="slides img6">
+         <img src="@slide6"/>
+        <div class="content-slide">
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/everest/?intcmp=bb-fph-hp-fph-vhp-ford%20everest-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <section class="slides section-bg section--full-height background-image-full section--content-center"
-         style="background-image: url('@slide7')">
-        <div class="section__hero-content">
+    <section class="slides img7">
+         <img src="@slide7"/>
+        <div class="content-slide">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/ranger/?intcmp=bb-fph-hp-fph-vhp-ford%20ranger-return">
                 @home.CaptionButton
             </a>
         </div>
     </section>
-    <a class="slides section-bg section--full-height background-image-full section--content-center" href="/">
-        <img class="slide8Img section-bg  section--content-center"
+    <a class="slides img8" href="/">
+        <img class="slide8Img section-bg section--content-center"
          src="@slide8"/>
     </a>
+    <div class="carousel-buttons">
+       <a href="#" class="btn1"></a> 
+       <a href="#" class="btn2"></a> 
+       <a href="#" class="btn3"></a>
+       <a href="#" class="btn4"></a>
+       <a href="#" class="btn5"></a> 
+       <a href="#" class="btn6"></a>
+       <a href="#" class="btn7"></a>
+       <a href="#" class="btn8"></a> 
+    </div>
 </section>
+</div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.btn1').click(function(){
+            $('.img1').css("marginLeft","0");
+        })
+        $('.btn2').click(function(){
+            $('.img1').css("marginLeft","-12.5%");
+        })
+        $('.btn3').click(function(){
+            $('.img1').css("marginLeft","-25%");
+        })
+        $('.btn4').click(function(){
+            $('.img1').css("marginLeft","-37.5%");
+        })
+        $('.btn5').click(function(){
+            $('.img1').css("marginLeft","-50%");
+        })
+        $('.btn6').click(function(){
+            $('.img1').css("marginLeft","-62.5%");
+        })
+        $('.btn7').click(function(){
+            $('.img1').css("marginLeft","-75%");
+        })
+        $('.btn8').click(function(){
+            $('.img1').css("marginLeft","-87.5%");
+        })
+    })
+</script>

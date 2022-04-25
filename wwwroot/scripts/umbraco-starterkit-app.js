@@ -56,7 +56,7 @@
     
 let slideIndex = 0;
 //showSlides(slideIndex);
-showSlides();
+//showSlides();
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -95,22 +95,100 @@ showVehicles();
 
 function showVehicles(n = null){
     let divs = document.getElementsByClassName("vehicles-list-div");
+    let navOptions = document.getElementsByClassName("nav-option");
     if(n == null){
        for (let i = 0; i < divs.length; i++) {
            if(i != 0){
                divs[i].style.display = "none";
+               navOptions[i].classList.remove("nav-option-active");
            }
         } 
     }
     else
     {
-        console.log("Quiero ver anime jeje " + n);
-        for (let i = 0; i < divs.length; i++) {
-           if(i != n+1){
-               divs[i].style.display = "none";
-           }else{
-               divs[n+1].style.display = "flex";
-           }
-        } 
+        console.log("Quiero ver anime jejeddddd " + n);
+        switch (n){
+            case 1:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none"; 
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n1");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("1");
+                    div.style.display = "flex";
+                }
+                break;
+            case 2:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none"; 
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n2");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("2");
+                    div.style.display = "flex";
+                }
+                break;
+            case 3:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none"; 
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n3");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("3");
+                    div.style.display = "flex";
+                }
+                break;
+            case 4:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n4");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("4");
+                    div.style.display = "flex";
+                }
+                break;
+            case 5:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n5");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("5");
+                    div.style.display = "flex";
+                }
+                break;
+            case 6:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n6");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("6");
+                    div.style.display = "flex";
+                }
+                break;
+            case 7:
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active");
+                    let option = document.getElementById("n7");
+                    option.classList.add("nav-option-active");
+                    let div = document.getElementById("7");
+                    div.style.display = "flex";
+                }
+                break;
+            default:
+                console.log("default");
+                break;
+            
+        }
     }
 }
