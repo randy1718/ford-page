@@ -1,0 +1,86 @@
+﻿
+@using Umbraco.Extensions
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+@{
+    Layout = "master.cshtml";
+    var carImage = Model.CarImage != null ? Model.CarImage.Url() : String.Empty;
+    var lastImage = Model.LastImage != null ? Model.LastImage.Url() : String.Empty;
+    var familyImage = Model.FamilyImage != null ? Model.FamilyImage.Url() : String.Empty;
+}
+
+<section>
+    @await Html.PartialAsync("~/Views/Partials/Carousel.cshtml")
+</section>
+
+<section class="first-text_section">
+    <div class="first-text-div">
+        <a href="https://www.ford.com.ph/owner/contact-us/">cellphone</a>
+        <p class="first-text">
+            For any concerns or inquiries about your Ford vehicle, our Customer Relationship Center can be of assistance to you. 
+            Please call +632 8866 9408 or send us an email at <a href="mailto:emailusaford.com">emailusaford.com</a>
+        </p>
+        
+    </div>
+</section>
+
+<section class="section-bg section--full-height background-image-full section--content-center">
+    <a href="https://www.ford.com.ph/shopping/latest-offer/?intcmp=hp-return-io">
+        <img class="img-section-family" src="@carImage"/>
+    </a>
+</section>
+
+<section class="section section">
+     @await Html.PartialAsync("~/Views/Partials/Vehicles.cshtml", model: Model.Descendant<Vehicles>())
+</section>
+
+<section class="section-family background-image-full">
+    <a href="https://www.ford.com.ph/owner/warranties/">
+        <img class="img-section-family" src="@familyImage"/>
+    </a>
+    
+</section>
+
+<section class="section-text">
+    <p class="title-h1">What's happening at Ford Philippines</p>
+    <p class="text-p">Stories, conversations and videos featuring people and the Fords they love.</p>
+</section>
+
+<section>
+    @await Html.PartialAsync("~/Views/Partials/GridImagesBtns.cshtml")
+</section>
+
+<section class="section-red-car section--full-height-img background-image-full section--content-center-red-car" 
+         style="background-image: url('@lastImage')">
+         <div>
+            <p class="title-red-car">@Model.TitleRC</p>
+            <a class="button button-red-car" href="https://www.ford.com.ph/suvs/explorer/?intcmp=bb-fph-hp-fph-vhp-ford%20explorer-return">
+                @Model.CaptionButtonRC
+            </a>
+         </div>
+</section>
+
+<section class="section-location">
+    <div class="content-location">
+        <div class="text-location">
+            Search for <br/> 
+            Nearby<br/>
+            Ford Dealers
+        </div>
+        <div class="input-location-div">
+            <a class="link-location" href="/">Use my current location</a>
+            <input class="input-location" type="text" placeholder="Enter Location"/>
+            <a class="link-search" href="https://www.ford.com.ph/locate-a-dealer/?intcmp=hp-return-lad">Use Advanced Search</a>
+        </div>
+    </div>
+</section>
+
+<section class="first-footer" style="background-color:#343434"></section>
+
+<div>
+    @await Html.PartialAsync("~/Views/Partials/MainFooterLinks.cshtml", model: Model.Descendant<MainLinks>())
+</div>
+
+<section>
+    @await Html.PartialAsync("~/Views/Partials/SocialMediaFooter.cshtml")
+</section>

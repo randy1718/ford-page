@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var site = Model.Root();
+    var selection = site.Children.Where(x => x.IsVisible());
+}
+<!-- comment out the following line if you want to remove the root node name from the top navigation -->
+<!--<a class="nav-link Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="site.Url()">site.Name</a>-->
+@foreach (var item in selection)
+{
+    @if(item.Name != "Main Links"){
+        <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a>
+    }
+}
+    <a class="nav-another-link" href="/">Locate a dealer</a>
+    <a class="nav-another-link" href="/">Download a Brochure</a>
+    <a class="nav-another-link" href="/">Log in</a>
+    <a class="nav-another-link" href="/">?</a>

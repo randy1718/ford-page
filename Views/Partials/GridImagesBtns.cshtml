@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var home = (Home) Model.Root();
+    var imgBtn1 = home.Btn1 != null ? home.Btn1.Url() : String.Empty;
+    var imgBtn2 = home.Btn2 != null ? home.Btn2.Url() : String.Empty;
+    var imgBtn3 = home.Btn3 != null ? home.Btn3.Url() : String.Empty;
+    var imgBtn4 = home.Btn4 != null ? home.Btn4.Url() : String.Empty;
+    var imgBtn5 = home.Btn5 != null ? home.Btn5.Url() : String.Empty;
+}
+
+<section class="section-btns section--full-height background-image-full" 
+         style="background-color:black;color: white">
+        <a href="/" class="column column-btn" style="background-image: url('@imgBtn1')">
+            <div class="caption-col-btn">
+                Ranger Raptor: Born Ready
+            </div>
+        </a>
+         <div class="column c2">
+             <div class="sub-column">
+                 <a href="/">
+                    <div class="row-btn" style="background-image: url('@imgBtn2')">
+                        <div class="caption-grid-btn-1">
+                            New Ford Ranger
+                        </div> 
+                    </div>
+                 </a>
+                <a href="/">
+                    <div class="row-btn" style="background-image: url('@imgBtn4')">
+                        <div class="caption-grid-btn-1">
+                            Engineered for Extraordinary
+                        </div>
+                    </div>
+                </a>
+             </div>
+             <div class="sub-column">
+                <a href="/">
+                    <div class="row-btn" style="background-image: url('@imgBtn3')">
+                        <div class="caption-grid-btn">
+                            Mileage you need. Power you want.
+                        </div> 
+                    </div>
+                </a>
+                <a href="/">
+                    <div class="row-btn mustang-btn" style="background-image: url('@imgBtn5')">
+                        <div class="caption-grid-btn">
+                            New Mustang
+                        </div>
+                    </div>
+                </a>
+             </div>
+         </div>
+</section>

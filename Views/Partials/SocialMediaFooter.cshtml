@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var home = (Home) Model.Root();
+}
+
+
+<section class="section--themed">
+
+    <div class="social-media">
+                <p>Follow Ford</p>
+                <div class="sm-links">
+                    <a class="sm-link" href="https://www.facebook.com/FordPhilippines">
+                        <img src="@home.FacebookLogo.Url()"/>
+                    </a>
+                    <a class="sm-link" href="https://twitter.com/FordPhilippines">
+                        <img src="@home.TwitterLogo.Url()"/>
+                    </a>
+                    <a class="sm-link" href="https://www.youtube.com/channel/UCRIlCN3oEZv8AoorRQcOfPA">
+                        <img src="@home.YoutubeLogo.Url()"/>
+                    </a>
+                    <a class="sm-link" href="https://www.instagram.com/fordphilippines/">
+                        <img src="@home.InstagramLogo.Url()"/>
+                    </a>
+                </div>
+    </div>
+
+</section>

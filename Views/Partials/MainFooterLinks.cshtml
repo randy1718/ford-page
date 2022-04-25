@@ -1,0 +1,53 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var home = (Home) Model.Root();
+}
+
+
+<section class="second-footer">
+            <div class="main-links">
+                <div class="m-links">
+                    <h4>VEHICLES</h4>
+                    @foreach (Link link in Model.Children<Link>()){
+                        @if(link.ReferenceList == "Vehicles"){
+                            <a href="@link.LinkUrl">@link.LinkCaption</a>
+                        }
+                    }
+                </div>
+                <div class="m-links">
+                    <h4>SHOP</h4>
+                    @foreach (Link link in Model.Children<Link>()){
+                        @if(link.ReferenceList == "Shop"){
+                            <a href="@link.LinkUrl">@link.LinkCaption</a>
+                        }
+                    }
+                </div>
+                <div class="m-links">
+                    <h4>ENGINEERING</h4>
+                    @foreach (Link link in Model.Children<Link>()){
+                        @if(link.ReferenceList == "Engineering"){
+                            <a href="@link.LinkUrl">@link.LinkCaption</a>
+                        }
+                    }
+                </div>
+                <div class="m-links">
+                    <h4>OWNER</h4>
+                    @foreach (Link link in Model.Children<Link>()){
+                        @if(link.ReferenceList == "Owner"){
+                            <a href="@link.LinkUrl">@link.LinkCaption</a>
+                        }
+                    }
+                </div>
+                <div class="m-links">
+                    <h4>ABOUT FORD</h4>
+                    @foreach (Link link in Model.Children<Link>()){
+                        @if(link.ReferenceList == "About Ford"){
+                            <a href="@link.LinkUrl">@link.LinkCaption</a>
+                        }
+                    }
+                </div>
+            </div>
+
+</section>

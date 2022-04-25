@@ -1,0 +1,78 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var home = (Home) Model.Root();
+    var slide1 = home.Slide1 != null ? home.Slide1.Url() : String.Empty;
+    var slide2 = home.Slide2 != null ? home.Slide2.Url() : String.Empty;
+    var slide3 = home.Slide3 != null ? home.Slide3.Url() : String.Empty;
+    var slide4 = home.Slide4 != null ? home.Slide4.Url() : String.Empty;
+    var slide5 = home.Slide5 != null ? home.Slide5.Url() : String.Empty;
+    var slide6 = home.Slide6 != null ? home.Slide6.Url() : String.Empty;
+    var slide7 = home.Slide7 != null ? home.Slide7.Url() : String.Empty;
+    var slide8 = home.Slide8 != null ? home.Slide8.Url() : String.Empty;
+}
+
+
+<section class="carousel">
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide1')">
+        <div class="section__hero-content-first-slide">
+            <h1>@home.FirstTextSlide1</h1>
+            <h1>@home.SecondTextSlide1</h1>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide2')">
+        <div class="section__hero-content">
+            <h1>@home.TextSlide2</h1>
+            <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/explorer/?intcmp=bb-fph-hp-fph-vhp-ford%20explorer-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide3')">
+        <div class="section__hero-content">
+            <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/f150/?intcmp=bb-fph-hp-fph-vhp-ford%20f150-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide4')">
+        <div class="section__hero-content">
+            <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/territory/?intcmp=bb-fph-hp-fph-vhp-ford%20territory-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide5')">
+        <div class="section__hero-content">
+            <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/raptor/?intcmp=bb-fph-hp-fph-vhp-ford%20raptor-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide6')">
+        <div class="section__hero-content">
+            <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/everest/?intcmp=bb-fph-hp-fph-vhp-ford%20everest-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <section class="slides section-bg section--full-height background-image-full section--content-center"
+         style="background-image: url('@slide7')">
+        <div class="section__hero-content">
+            <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/ranger/?intcmp=bb-fph-hp-fph-vhp-ford%20ranger-return">
+                @home.CaptionButton
+            </a>
+        </div>
+    </section>
+    <a class="slides section-bg section--full-height background-image-full section--content-center" href="/">
+        <img class="slide8Img section-bg  section--content-center"
+         src="@slide8"/>
+    </a>
+</section>

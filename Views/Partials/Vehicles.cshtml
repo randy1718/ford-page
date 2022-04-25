@@ -1,0 +1,171 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<div>
+        <h1>A Ford vehicle for every lifestyle!</h1>
+        <h4>See our full lineup of vehicles:</h4>
+        <div class="min-nav-bar">
+            <div onclick="showVehicles(1)">Most Popular</div>
+            <div onclick="showVehicles(2)">Suvs</div>
+            <div onclick="showVehicles(3)">Trucks</div>
+            <div onclick="showVehicles(4)">Performance</div>
+            <div onclick="showVehicles(5)">Coming Soon</div>
+            <div onclick="showVehicles(6)">All vehicles</div>
+            <div onclick="showVehicles(7)">Previously Searched</div>
+        </div>
+        
+        <div class="most-popular-div vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Most popular"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "SUVs"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Trucks"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Performance"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Coming Soon"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    var IsComingSoon = false;
+                    @foreach (String nl in vehicle.ReferenceList){
+                        @if(nl == "Coming Soon"){
+                            IsComingSoon = true;
+                        }
+                    }
+                    @if(nameList == "All Vehicles" && IsComingSoon == false ){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                    @if(nameList == "All Vehicles" && IsComingSoon == true){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="vehicles-list-div">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Most popular"){
+                        <div>
+                        <a href="@vehicle.Link">
+                            <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                        </a>
+                        <a href="@vehicle.Link">
+                            <p>@vehicle.ReferenceName</p>
+                        </a>
+                        <p>Starting Price</p>
+                        <p>₱@vehicle.Price</p>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
