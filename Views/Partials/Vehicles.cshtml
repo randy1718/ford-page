@@ -4,16 +4,16 @@
 
 <div>
     <div class="list-vehicles">
-        <h1>A Ford vehicle for every lifestyle!</h1>
-        <h4>See our full lineup of vehicles:</h4>
+        <p class="h1-vehicles">A Ford vehicle for every lifestyle!</p>
+        <p class="p-vehicles">See our full lineup of vehicles:</p>
         <div class="min-nav-bar">
-            <div id="n1" class="nav-option nav-option-active" onclick="showVehicles(1)">Most Popular</div>
-            <div id="n2" class="nav-option" onclick="showVehicles(2)">Suvs</div>
-            <div id="n3" class="nav-option" onclick="showVehicles(3)">Trucks</div>
-            <div id="n4" class="nav-option" onclick="showVehicles(4)">Performance</div>
-            <div id="n5" class="nav-option" onclick="showVehicles(5)">Coming Soon</div>
-            <div id="n6" class="nav-option" onclick="showVehicles(6)">All vehicles</div>
-            <div id="n7" class="nav-option" onclick="showVehicles(7)">Previously Searched</div>
+            <div id="n1" class="nav-option nav-option-active" onclick="showVehicles(1)">MOST POPULAR</div>
+            <div id="n2" class="nav-option" onclick="showVehicles(2)">SUVS</div>
+            <div id="n3" class="nav-option" onclick="showVehicles(3)">TRUCKS</div>
+            <div id="n4" class="nav-option" onclick="showVehicles(4)">PERFORMANCE</div>
+            <div id="n5" class="nav-option" onclick="showVehicles(5)">COMING SOON</div>
+            <div id="n6" class="nav-option" onclick="showVehicles(6)">ALL VEHICLES</div>
+            <div id="n7" class="nav-option" onclick="showVehicles(7)">PREVIOULSY SEARCHED</div>
         </div>
     </div>
         <div id="1" class="vehicles-list-div">
@@ -21,15 +21,15 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "Most popular"){
-                        <div>
+                        <div class="vehicle-div">
                             <a  href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                         </div>
                     }
                 }
@@ -41,15 +41,15 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "SUVs"){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                             </div>
                     }
                 }
@@ -61,15 +61,15 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "Trucks"){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                         </div>
                     }
                 }
@@ -81,15 +81,15 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "Performance"){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                         </div>
                     }
                 }
@@ -101,7 +101,7 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "Coming Soon"){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
@@ -125,19 +125,19 @@
                         }
                     }
                     @if(nameList == "All Vehicles" && IsComingSoon == false ){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                         </div>
                     }
                     @if(nameList == "All Vehicles" && IsComingSoon == true){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
@@ -155,15 +155,15 @@
             {
                 @foreach (String nameList in vehicle.ReferenceList){
                     @if(nameList == "Most popular"){
-                        <div>
+                        <div class="vehicle-div">
                             <a href="@vehicle.Link">
                                 <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
                             </a>
                             <a class="reference-vehicle" href="@vehicle.Link">
                                 <p>@vehicle.ReferenceName</p>
                             </a>
-                            <p>Starting Price</p>
-                            <p>₱@vehicle.Price</p>
+                            <p class="text-price">Starting Price</p>
+                            <p class="price-vehicle">₱@vehicle.Price</p>
                         </div>
                     }
                 }

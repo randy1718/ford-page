@@ -1938,7 +1938,7 @@ a.nav-link.nav-link--black:hover {
 }
 
 .first-text-div {
-  font-size: 20px;
+  font-size: 19px;
   align-items: center;
   width: 80%;
   display: flex;
@@ -1956,6 +1956,12 @@ a.nav-link.nav-link--black:hover {
 
 .section {
   padding: 50px 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.section-vehicles {
+  padding: 30px 20px;
   align-items: center;
   text-align: center;
 }
@@ -2074,7 +2080,7 @@ a.nav-link.nav-link--black:hover {
 
 .carousel .slides{
     width: 12.5%;
-    transition: 2s;
+    transition: .8s;
 }
 
 .slides {
@@ -2102,6 +2108,15 @@ a.nav-link.nav-link--black:hover {
     display: flex;
 }
 
+.email-contact{
+  text-decoration: none;
+  color: #2B96CD;
+  transition: 0.5s;
+}
+
+.email-contact:hover{
+  color:#0078A0;
+}
 
 @keyframes slider {
   0% {
@@ -3633,11 +3648,35 @@ article img {
   display: flex;
   width: fit-content;
   margin: 0 auto;
+  margin-top: 50px;
   margin-bottom: 30px;
+}
+
+.vehicle-div{
+  margin-right: 25px;
+  margin-bottom: 20px;
+  z-index: 20;
+}
+
+.car-img:hover{
+  transform: scale(110%);
 }
 
 .vehicles-list-div {
   display: flex;
+  margin-left: 100px;
+  width: 1400px;
+  flex-wrap: wrap;
+}
+
+.h1-vehicles{
+  font-weight: 400;
+  font-size: 37px;
+}
+
+.p-vehicles{
+  font-size: 14px;
+  margin-top: -12px;
 }
 
 .nav-option{
@@ -3645,7 +3684,7 @@ article img {
     margin-right: 10px;
     margin-left: 10px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 16px;
     color:#00095B;
 }
 
@@ -3662,11 +3701,25 @@ article img {
 }
 
 .car-img {
-  width: 55%;
+  width: 182.99px;
+  height: 91.49px;
+  transition: .2s;
+  z-index: 20;
 }
 
 .reference-vehicle{
     text-decoration: none;
     color:#00095B;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.text-price{
+  font-size: 13px;
+}
+
+.price-vehicle{
+  margin-top: -5px;
+  font-weight: 600;
+  color: #4D4D53;
+  font-size: 13px;
 }

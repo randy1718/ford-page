@@ -15,10 +15,12 @@
 
 <section class="first-text_section">
     <div class="first-text-div">
-        <a href="https://www.ford.com.ph/owner/contact-us/">cellphone</a>
+        <a href="@Model.ContactLink">
+            <img src="@Model.ContactUsIcon.Url()"/>
+        </a>
         <p class="first-text">
             For any concerns or inquiries about your Ford vehicle, our Customer Relationship Center can be of assistance to you. 
-            Please call +632 8866 9408 or send us an email at <a href="mailto:emailusaford.com">emailusaford.com</a>
+            Please call +632 8866 9408 or send us an email at <a class="email-contact" href="mailto:@Model.EmailContact">@Model.EmailContact</a>
         </p>
         
     </div>
@@ -30,7 +32,7 @@
     </a>
 </section>
 
-<section class="section section">
+<section class="section-vehicles">
      @await Html.PartialAsync("~/Views/Partials/Vehicles.cshtml", model: Model.Descendant<Vehicles>())
 </section>
 
