@@ -3,8 +3,8 @@
 @using Umbraco.Extensions
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-    var site = Model.Root();
-    var selection = site.Children.Where(x => x.IsVisible());
+    var home = (Home) Model.Root();
+    var selection = home.Children.Where(x => x.IsVisible());
 }
 <!-- comment out the following line if you want to remove the root node name from the top navigation -->
 <!--<a class="nav-link Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="site.Url()">site.Name</a>-->
@@ -14,7 +14,7 @@
         <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a>
     }
 }
-    <a class="nav-another-link" href="/">Locate a dealer</a>
-    <a class="nav-another-link" href="/">Download a Brochure</a>
-    <a class="nav-another-link" href="/">Log in</a>
-    <a class="nav-another-link" href="/">?</a>
+    <a class="nav-another-link" href="https://www.ford.com.ph/locate-a-dealer/">Locate a dealer</a>
+    <a class="nav-another-link" href="https://www.ford.com.ph/download-brochure/">Download a Brochure</a>
+    <a class="nav-another-link" href="https://www.ford.com.ph/#overlay/content/ford/ph/en_ph/site-wide-content/overlays/form-overlay/login.html">Log in</a>
+    <a class="nav-another-link search-link" href="https://euw-va2.astuteknowledge.com/ford/PHPublic/"><img class="logo-search" src="@home.SearchLogo.Url()"/></a>

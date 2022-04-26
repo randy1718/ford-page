@@ -29,10 +29,13 @@
 </head>
 
 <body class="frontpage theme-color-@colorTheme">
+<div class="side-btn">
+    <img class="img-sb" src="@home.SideButtonLogo.Url()"/>
+</div>
     <div class="allContent">
         <div class="mobile-nav">
             <nav class="nav-bar">
-                @await Html.PartialAsync("~/Views/Partials/Navigation/TopNavigation.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Navigation/TopNavigation.cshtml",model: home)
             </nav>
         </div>
 

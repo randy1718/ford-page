@@ -25,8 +25,8 @@
     </section>
     <section class="slides img2">
         <img src="@slide2"/>
-        <div class="content-slide">
-            <h1>@home.TextSlide2</h1>
+        <div class="content-slide-2">
+            <h1 class="text-slide-2">@home.TextSlide2</h1>
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/explorer/?intcmp=bb-fph-hp-fph-vhp-ford%20explorer-return">
                 @home.CaptionButton
             </a>
@@ -34,7 +34,7 @@
     </section>
     <section class="slides img3">
          <img src="@slide3"/>
-        <div class="content-slide">
+        <div class="content-slide-3">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/f150/?intcmp=bb-fph-hp-fph-vhp-ford%20f150-return">
                 @home.CaptionButton
             </a>
@@ -42,7 +42,7 @@
     </section>
     <section class="slides img4">
          <img src="@slide4"/>
-        <div class="content-slide">
+        <div class="content-slide-4">
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/territory/?intcmp=bb-fph-hp-fph-vhp-ford%20territory-return">
                 @home.CaptionButton
             </a>
@@ -50,7 +50,7 @@
     </section>
     <section class="slides img5">
          <img src="@slide5"/>
-        <div class="content-slide">
+        <div class="content-slide-5">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/raptor/?intcmp=bb-fph-hp-fph-vhp-ford%20raptor-return">
                 @home.CaptionButton
             </a>
@@ -58,7 +58,7 @@
     </section>
     <section class="slides img6">
          <img src="@slide6"/>
-        <div class="content-slide">
+        <div class="content-slide-6">
             <a class="button button--border--solid" href="https://www.ford.com.ph/suvs/everest/?intcmp=bb-fph-hp-fph-vhp-ford%20everest-return">
                 @home.CaptionButton
             </a>
@@ -66,7 +66,7 @@
     </section>
     <section class="slides img7">
          <img src="@slide7"/>
-        <div class="content-slide">
+        <div class="content-slide-7">
             <a class="button button--border--solid" href="https://www.ford.com.ph/trucks/ranger/?intcmp=bb-fph-hp-fph-vhp-ford%20ranger-return">
                 @home.CaptionButton
             </a>
@@ -77,14 +77,14 @@
          src="@slide8"/>
     </a>
     <div class="carousel-buttons">
-       <a href="#" class="btn1"></a> 
-       <a href="#" class="btn2"></a> 
-       <a href="#" class="btn3"></a>
-       <a href="#" class="btn4"></a>
-       <a href="#" class="btn5"></a> 
-       <a href="#" class="btn6"></a>
-       <a href="#" class="btn7"></a>
-       <a href="#" class="btn8"></a> 
+       <a href="#" class="btns btn1 btn-active"></a> 
+       <a href="#" class="btns btn2"></a> 
+       <a href="#" class="btns btn3"></a>
+       <a href="#" class="btns btn4"></a>
+       <a href="#" class="btns btn5"></a> 
+       <a href="#" class="btns btn6"></a>
+       <a href="#" class="btns btn7"></a>
+       <a href="#" class="btns btn8"></a> 
     </div>
 </section>
 </div>
@@ -94,27 +94,44 @@
     $(document).ready(function(){
         $('.btn1').click(function(){
             $('.img1').css("marginLeft","0");
+            $('.btns').removeClass('btn-active');
+            $('.btn1').addClass('btn-active');
+
         })
         $('.btn2').click(function(){
             $('.img1').css("marginLeft","-12.5%");
+            $('.btns').removeClass('btn-active');
+            $('.btn2').addClass('btn-active');
         })
         $('.btn3').click(function(){
             $('.img1').css("marginLeft","-25%");
+            $('.btns').removeClass('btn-active');
+            $('.btn3').addClass('btn-active');
         })
         $('.btn4').click(function(){
             $('.img1').css("marginLeft","-37.5%");
+            $('.btns').removeClass('btn-active');
+            $('.btn4').addClass('btn-active');
         })
         $('.btn5').click(function(){
             $('.img1').css("marginLeft","-50%");
+            $('.btns').removeClass('btn-active');
+            $('.btn5').addClass('btn-active');
         })
         $('.btn6').click(function(){
             $('.img1').css("marginLeft","-62.5%");
+            $('.btns').removeClass('btn-active');
+            $('.btn6').addClass('btn-active');
         })
         $('.btn7').click(function(){
             $('.img1').css("marginLeft","-75%");
+            $('.btns').removeClass('btn-active');
+            $('.btn7').addClass('btn-active');
         })
         $('.btn8').click(function(){
             $('.img1').css("marginLeft","-87.5%");
+            $('.btns').removeClass('btn-active');
+            $('.btn8').addClass('btn-active');
         })
     })
 </script>
