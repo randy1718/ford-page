@@ -57,7 +57,7 @@
 let slideIndex = 0;
 let mLeft = 0;
 //showSlides(slideIndex);
-//showSlides();
+showSlides();
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
