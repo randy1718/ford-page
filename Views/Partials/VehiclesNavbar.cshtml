@@ -1,0 +1,90 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+    <div>
+        <div class="list-vehicles-navbar">
+            <div class="min-nav-bar-navbar">
+                <div id="n2-navbar" class="nav-option-navbar nav-option-active-navbar" onclick="showVehiclesNavbar('2-navbar')">SUVs</div>
+                <div id="n3-navbar" class="nav-option-navbar" onclick="showVehiclesNavbar('3-navbar')">Trucks</div>
+                <div id="n4-navbar" class="nav-option-navbar" onclick="showVehiclesNavbar('4-navbar')">Performance</div>
+                <div id="n5-navbar" class="nav-option-navbar" onclick="showVehiclesNavbar('5-navbar')">Coming soon</div>
+            </div>
+        </div>
+        <div id="2-navbar" class="vehicles-list-div-navbar">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "SUVs"){
+                        <div class="vehicle-div-navbar">
+                            <a href="@vehicle.Link">
+                                <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                            </a>
+                            <a class="reference-vehicle-navbar" href="@vehicle.Link">
+                                <p>@vehicle.ReferenceName</p>
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div id="3-navbar" class="vehicles-list-div-navbar">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Trucks"){
+                        <div class="vehicle-div-navbar">
+                            <a href="@vehicle.Link">
+                                <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                            </a>
+                            <a class="reference-vehicle-navbar" href="@vehicle.Link">
+                                <p>@vehicle.ReferenceName</p>
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div id="4-navbar" class="vehicles-list-div-navbar">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Performance"){
+                        <div class="vehicle-div-navbar">
+                            <a href="@vehicle.Link">
+                                <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                            </a>
+                            <a class="reference-vehicle-navbar" href="@vehicle.Link">
+                                <p>@vehicle.ReferenceName</p>
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div id="5-navbar" class="vehicles-list-div-navbar">
+            @foreach (Vehicle vehicle in Model.Children<Vehicle>())
+            {
+                @foreach (String nameList in vehicle.ReferenceList){
+                    @if(nameList == "Coming Soon"){
+                        <div class="vehicle-div-navbar">
+                            <a href="@vehicle.Link">
+                                <img class="car-img" src="@vehicle.VehiclePhoto.Url()"/>
+                            </a>
+                            <a class="reference-vehicle-navbar" href="@vehicle.Link">
+                                <p>@vehicle.ReferenceName</p>
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        
+        <div class="buttons-nb">
+            <a class="button-navbar" href="https://www.ford.com.ph/content/ford/ph/en_ph/home/vehicles.html">Explore All Vehicles</a>
+            <a class="button-navbar" href="https://www.ford.com.ph/content/ford/ph/en_ph/home/cross-nameplate-compare.html">Vehicle Compare</a>
+        </div>
+    </div>

@@ -54,8 +54,76 @@
     [1]);
     
     
+function showModal(name){
+    console.log(name);
+    let overlay = document.getElementById("overlay"); 
+    let hdivs = document.getElementsByClassName("hidden-div");
+    console.log(overlay);
+    overlay.style.display="inline";
+    overlay.classList.add("overlay-div");
+    switch(name){
+        case 'Vehicles':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let vehiclesDiv = document.getElementById("hdiv-vehicles"); 
+            let vehiclesNavOption = document.getElementById("nav-Vehicles");
+            vehiclesNavOption.classList.add('nav-link-active');
+            console.log(vehiclesNavOption);
+            vehiclesDiv.classList.remove("div-hidden");
+            
+            break;
+        case 'Shop':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let shopDiv = document.getElementById("hdiv-shop"); 
+            shopDiv.classList.remove("div-hidden");
+            break;
+        case 'Fleet':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let fleetDiv = document.getElementById("hdiv-fleet"); 
+            fleetDiv.classList.remove("div-hidden");
+            break;
+        case 'Engineering':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let engineeringDiv = document.getElementById("hdiv-engineering"); 
+            engineeringDiv.classList.remove("div-hidden");
+            break;
+        case 'About Ford':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let aboutFordDiv = document.getElementById("hdiv-aboutFord"); 
+            aboutFordDiv.classList.remove("div-hidden");
+            break;
+        case 'Owner':
+            for (let i = 0; i < hdivs.length; i++) {
+                hdivs[i].classList.add("div-hidden");
+            }
+            let ownerDiv = document.getElementById("hdiv-owner"); 
+            ownerDiv.classList.remove("div-hidden");
+            break;
+    }
+} 
+
+function hideOverlay(){
+    let overlay = document.getElementById("overlay"); 
+    let hdivs = document.getElementsByClassName("hidden-div"); 
+    for (let i = 0; i < hdivs.length; i++) {
+        hdivs[i].classList.add("div-hidden");
+    }
+    overlay.classList.add("overlay-hidden");
+    overlay.classList.remove("overlay-div");
+    
+}
 let slideIndex = 0;
 let mLeft = 0;
+let timeSlide = 3000;
 //showSlides(slideIndex);
 showSlides();
 function plusSlides(n) {
@@ -68,18 +136,82 @@ function currentSlide(n) {
 
 function showSlides(n = null) {
   let slides = document.getElementsByClassName("slides");
+  let btns = document.getElementsByClassName("btns"); 
   let img1 = document.getElementsByClassName("img1");
-  console.log(img1[0]);
   if(n == null){
-    console.log(img1);
     img1[0].style.marginLeft = mLeft+"%";
+    switch(mLeft){
+        case 0:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn1 = document.getElementsByClassName("btn1"); 
+            btn1[0].classList.add("btn-active");
+            break;
+        case -12.5:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn2 = document.getElementsByClassName("btn2"); 
+            btn2[0].classList.add("btn-active");
+            break;
+        case -25:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn3 = document.getElementsByClassName("btn3"); 
+            btn3[0].classList.add("btn-active");
+            break;
+        case -37.5:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn4 = document.getElementsByClassName("btn4"); 
+            btn4[0].classList.add("btn-active");
+            break;
+        case -50:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn5 = document.getElementsByClassName("btn5"); 
+            btn5[0].classList.add("btn-active");
+            break;
+        case -62.5:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn6 = document.getElementsByClassName("btn6"); 
+            btn6[0].classList.add("btn-active");
+            break;
+        case -75:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn7 = document.getElementsByClassName("btn7"); 
+            btn7[0].classList.add("btn-active");
+            break;
+        case -87.5:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn8 = document.getElementsByClassName("btn8"); 
+            btn8[0].classList.add("btn-active");
+            break;
+        case 12.5:
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");  
+            }
+            let btn01 = document.getElementsByClassName("btn01"); 
+            btn01[0].classList.add("btn-active");
+            break;
+    }
     if(mLeft == -87.5){
         //img1[0].style.transition = "0s";
         mLeft = 12.5;
     }
     
     mLeft -= 12.5;
-    setTimeout(showSlides, 3000);
+    setTimeout(showSlides, timeSlide);
     
   }else{
     if (n > slides.length) {slideIndex = 1}
@@ -93,6 +225,7 @@ function showSlides(n = null) {
   }
 }
 
+showVehiclesNavbar();
 showVehicles();
 
 function showVehicles(n = null){
@@ -108,7 +241,6 @@ function showVehicles(n = null){
     }
     else
     {
-        console.log("Quiero ver anime jejeddddd " + n);
         switch (n){
             case 1:
                 console.log(n);
@@ -184,6 +316,72 @@ function showVehicles(n = null){
                     let option = document.getElementById("n7");
                     option.classList.add("nav-option-active");
                     let div = document.getElementById("7");
+                    div.style.display = "flex";
+                }
+                break;
+            default:
+                console.log("default");
+                break;
+            
+        }
+    }
+}
+
+function showVehiclesNavbar(n = null){
+    let divs = document.getElementsByClassName("vehicles-list-div-navbar");
+    let navOptions = document.getElementsByClassName("nav-option-navbar");
+    if(n == null){
+       for (let i = 0; i < divs.length; i++) {
+           if(i != 0){
+               divs[i].style.display = "none";
+               navOptions[i].classList.remove("nav-option-active-navbar");
+           }
+        } 
+    }
+    else
+    {
+        switch (n){
+            case "2-navbar":
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none"; 
+                    navOptions[i].classList.remove("nav-option-active-navbar");
+                    let option = document.getElementById("n2-navbar");
+                    option.classList.add("nav-option-active-navbar");
+                    let div = document.getElementById("2-navbar");
+                    div.style.display = "flex";
+                }
+                break;
+            case '3-navbar':
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none"; 
+                    navOptions[i].classList.remove("nav-option-active-navbar");
+                    let option = document.getElementById("n3-navbar");
+                    option.classList.add("nav-option-active-navbar");
+                    let div = document.getElementById("3-navbar");
+                    div.style.display = "flex";
+                }
+                break;
+            case '4-navbar':
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active-navbar");
+                    let option = document.getElementById("n4-navbar");
+                    option.classList.add("nav-option-active-navbar");
+                    let div = document.getElementById("4-navbar");
+                    div.style.display = "flex";
+                }
+                break;
+            case '5-navbar':
+                console.log(n);
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "none";
+                    navOptions[i].classList.remove("nav-option-active-navbar");
+                    let option = document.getElementById("n5-navbar");
+                    option.classList.add("nav-option-active-navbar");
+                    let div = document.getElementById("5-navbar");
                     div.style.display = "flex";
                 }
                 break;

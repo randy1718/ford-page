@@ -20,6 +20,7 @@ html {
   border-left: 1px solid #dbdbdb;
   max-width: 90rem;
   margin: 0 auto;
+  display: relative;
   align-items: center;
   overflow-x: hidden;
   font-family: "BIZ UDPGothic", sans-serif;
@@ -285,6 +286,186 @@ th {
   text-decoration: none;
   color: #9ca6a8;
   margin-bottom: 10px;
+}
+
+.link-shop{
+  display: grid;
+  font-size: 15px;
+  text-decoration: none;
+  color: #008cba;
+  margin: 15px 0px;
+}
+
+.link-shop:hover{
+  color: #00095b;
+}
+
+.shop-div{
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 42%;
+}
+
+.shop-header{
+  padding: 20px 0px;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.box-shop-links{
+  display: flex;
+}
+
+.shop-links-1{
+  width: 50%;
+  height: 190px;
+}
+
+.shop-links-2{
+  width: 50%;
+  height: 190px;
+}
+
+
+.link-fleet{
+  display: grid;
+  font-size: 15px;
+  text-decoration: none;
+  color: #008cba;
+  margin: 15px 0px;
+}
+
+.link-fleet:hover{
+  color: #00095b;
+}
+
+.fleet-div{
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 25%;
+}
+
+.fleet-header{
+  padding: 20px 0px;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.fleet-links{
+  width: 50%;
+  height: 190px;
+}
+
+
+.link-eng{
+  display: grid;
+  font-size: 15px;
+  text-decoration: none;
+  color: #008cba;
+  margin: 15px 0px;
+}
+
+.link-eng:hover{
+  color: #00095b;
+}
+
+.eng-div{
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 25%;
+}
+
+.eng-header{
+  padding: 20px 0px;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.eng-links{
+  width: 50%;
+  height: 190px;
+}
+
+.link-eng p{
+  margin-top: -0.5px;
+}
+
+
+
+.link-af{
+  display: grid;
+  font-size: 15px;
+  text-decoration: none;
+  color: #008cba;
+  margin: 15px 0px;
+}
+
+.link-af:hover{
+  color: #00095b;
+}
+
+.af-div{
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 25%;
+}
+
+.af-header{
+  padding: 20px 0px;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.af-links{
+  width: 50%;
+  height: 190px;
+}
+
+
+
+
+.link-owner{
+  display: grid;
+  font-size: 15px;
+  text-decoration: none;
+  color: #008cba;
+  margin: 15px 0px;
+}
+
+.link-owner:hover{
+  color: #00095b;
+}
+
+.owner-div{
+  margin-left: 100px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.owner-header{
+  padding: 20px 0px;
+  font-size: 22px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.owner-links{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.o-box{
+  margin-right: 30px;
+  width: 20%;
+  height: 250px;
+  margin-bottom: 50px;
+  overflow-y: auto;
+}
+
+.first-o-box{
+  transform: translateY(-22px);
 }
 
 .container:after,
@@ -1752,15 +1933,32 @@ body.theme-color-freaky .nav-link--home__text:after {
 
 .header {
   padding: 1.125rem 2.1875rem 0 4.8125rem;
-  margin-bottom: 18px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
-  width: fit-content;
-  height: 52px;
+  width: 100%;
+  height: 70px;
   background-color: white;
-  z-index: 4;
+  position: relative;
+  z-index: 9999;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 15%);
+}
+
+.utility-links{
+  display: flex;
+  float: right;
+  width: fit-content;
+  z-index: 9999;
+  margin-left: 135px;
+  align-items: center;
+}
+
+.overlay-hidden{
+  display: none;
+}
+
+.header div{
+  z-index: 300;
 }
 
 .header--fixed {
@@ -1771,6 +1969,7 @@ body.theme-color-freaky .nav-link--home__text:after {
     background 0.2s cubic-bezier(0.694, 0.0482, 0.335, 1);
   left: 0;
   position: fixed;
+  z-index: 200;
 }
 
 .header--fixed .nav-bar {
@@ -1778,6 +1977,7 @@ body.theme-color-freaky .nav-link--home__text:after {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 200;
 }
 
 .header--fixed .nav-link {
@@ -1834,6 +2034,7 @@ footer {
 .logo {
   align-items: left;
   text-align: left;
+  z-index: 300;
 }
 
 .logo-image {
@@ -1843,16 +2044,19 @@ footer {
   margin-left: 0px;
   margin-top: 5px;
   display: block;
+  z-index: 300;
 }
 
 .nav-bar {
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 1050px;
+  width: fit-content;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-direction: row;
   flex-direction: row;
+  z-index: 300;
+  padding-bottom: 15px;
 }
 
 .nav-bar--list {
@@ -1889,8 +2093,8 @@ footer {
 
 .nav-another-link {
   text-decoration: none;
-  margin: 8px 17px;
-  font-size: 17px;
+  margin: 8px 14px;
+  font-size: 16px;
   font-weight: 300;
   font-family: "Sunflower", sans-serif;
   color: #008cba;
@@ -1898,12 +2102,24 @@ footer {
 
 
 .logo-search{
-  width: 52%;
-
+  width: 19px;
+  z-index: 9999;
+  padding-top: 5px;
+  position: relative;
 }
 
 .nav-link:hover {
   color: #1b394e;
+  cursor: pointer;
+}
+
+.nav-link-active{
+  text-decoration: none;
+  margin: 2px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1b394e;
+  font-family: "Sunflower", sans-serif;
 }
 
 .nav-link--air-bottom {
@@ -1918,18 +2134,16 @@ a.nav-link.nav-link--black:hover {
   border-color: #000;
 }
 
-.nav-link--black.nav-link--active {
-  box-shadow: inset 0 -2px 0 #000;
-}
-
 .nav-link--home {
   font-size: 24px;
   font-weight: 900;
   margin-right: 40px;
   color: #f4f4f0;
-  width: 275px;
+  width: 160px;
   height: 37px;
 }
+
+
 
 .nav-link--home:hover {
   box-shadow: none;
@@ -1946,6 +2160,58 @@ a.nav-link.nav-link--black:hover {
   content: "";
   height: 3px;
   width: 200%;
+}
+
+.overlay-div{
+  display: none;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo-a{
+  z-index: 9999;
+}
+
+.hidden-div{
+  width: 94.73%;
+  background-color: white;
+  position: absolute;
+  z-index: 500;
+  margin-top: 4.65%;
+}
+
+.hdiv-1{
+  height: 360px;
+}
+
+.hdiv-2{
+  height: 327px;
+}
+
+.hdiv-3{
+  height: 214px;
+}
+
+.hdiv-4{
+  height: 242px;
+}
+
+.hdiv-5{
+  height: 242px;
+}
+
+.hdiv-6{
+  height: 624px;
+}
+
+.div-hidden{
+  display: none !important;
+  z-index: 0;
 }
 
 .first-text {
@@ -3754,9 +4020,30 @@ article img {
   margin-bottom: 30px;
 }
 
+.min-nav-bar-navbar {
+  display: flex;
+  width: 100%;
+  background-color: #FBFBFB;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid rgb(202, 202, 202);
+}
+
 .vehicle-div {
   margin-right: 25px;
   margin-bottom: 20px;
+  z-index: 20;
+}
+
+.vehicle-div-navbar {
+  margin-right: 50px;
+  margin-bottom: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   z-index: 20;
 }
 
@@ -3769,6 +4056,14 @@ article img {
   margin-left: 100px;
   width: 1400px;
   flex-wrap: wrap;
+}
+
+.vehicles-list-div-navbar {
+  display: flex;
+  margin-left: 100px;
+  width: 1400px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(193, 193, 193);
 }
 
 .h1-vehicles {
@@ -3790,9 +4085,53 @@ article img {
   color: #00095b;
 }
 
+.nav-option-navbar{
+  padding: 28px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #008cba;
+}
+
+.nav-option-navbar:hover{
+  color: #1B394E;
+}
+
+.button-navbar{
+  width: 250px;
+  background-color: #2D96CD;
+  padding: 21px 35px;
+  outline: none;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  margin: 20px 15px;
+  font-size: 14px;
+}
+
+.button-navbar:hover{
+  background-color: white;
+  color: #1B394E;
+  border: 1px solid #1B394E;
+}
+.buttons-nb{
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
 .nav-option-active {
   font-weight: bold;
   border-bottom: 2px solid;
+}
+
+.nav-option-active-navbar {
+  font-weight: bold;
+  color: #1B394E;
+  border-bottom: 4px solid;
 }
 
 .list-vehicles {
@@ -3802,8 +4141,23 @@ article img {
   position: relative;
 }
 
-.car-img {
+.list-vehicles-navbar {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+
+.car-img-navbar {
   width: 182.99px;
+  height: 81.99px;
+  transition: 0.2s;
+  z-index: 20;
+}
+
+.car-img{
+  width: 163.99px;
   height: 91.49px;
   transition: 0.2s;
   z-index: 20;
@@ -3813,6 +4167,13 @@ article img {
   text-decoration: none;
   color: #00095b;
   font-weight: 600;
+}
+
+.reference-vehicle-navbar {
+  text-decoration: none;
+  color: #008cba;
+  font-weight: 600;
+ 
 }
 
 .text-price {

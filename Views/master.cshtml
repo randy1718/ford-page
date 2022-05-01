@@ -29,40 +29,48 @@
 </head>
 
 <body class="frontpage theme-color-@colorTheme">
+<div  id="overlay" class="overlay-div" onclick="hideOverlay()"></div>
 <div class="side-btn">
     <img class="img-sb" src="@home.SideButtonLogo.Url()"/>
 </div>
+
     <div class="allContent">
+        <div id ="hdiv-vehicles" class="hdiv-1 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/VehiclesNavbar.cshtml", model: home.Descendant<Vehicles>())
+        </div>
+        <div id ="hdiv-shop" class="hdiv-2 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/ShopNavbar.cshtml")
+        </div>
+        <div id ="hdiv-fleet" class="hdiv-3 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/FleetNavbar.cshtml")
+        </div>
+        <div id ="hdiv-engineering" class="hdiv-4 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/EngineeringNavbar.cshtml")
+        </div>
+        <div id ="hdiv-aboutFord" class="hdiv-5 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/AboutFordNavbar.cshtml")
+        </div>
+        <div id ="hdiv-owner" class="hdiv-6 hidden-div div-hidden">
+            @await Html.PartialAsync("~/Views/Partials/OwnerNavbar.cshtml", model: home.Descendant<MainLinks>())
+        </div>
         <div class="mobile-nav">
             <nav class="nav-bar">
                 @await Html.PartialAsync("~/Views/Partials/Navigation/TopNavigation.cshtml",model: home)
             </nav>
         </div>
-
+        
         <header class="header">
-            <a href="/">
+            <a class="logo-a" href="/">
                 <div class="logo">
-                @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url()))
-
-                {
                     <div class="nav-link--home">
                         <img class="logo-image" src="@home.SiteLogo.Url()" alt="@home.Sitename">
                     </div>
-
-                }
-
-                else
-
-                {
-                    <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
-
-                }
             </div>
             </a>
             
 
             <nav class="nav-bar top-nav">
-                @await Html.PartialAsync("~/Views/Partials/Navigation/TopNavigation.cshtml")
+                @await Html.PartialAsync("~/Views/Partials/Navigation/TopNavigation.cshtml",model:home)
             </nav>
 
             <div class="mobile-nav-handler">
@@ -72,7 +80,7 @@
             </div>
 
         </header>
-
+        
         <main>
             @RenderBody()
         </main>

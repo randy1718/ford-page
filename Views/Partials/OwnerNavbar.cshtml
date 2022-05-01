@@ -1,0 +1,83 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var home = (Home) Model.Root();
+}
+
+<div class="owner-div">
+    <div class="owner-links">
+        <div class="o-box first-o-box">
+            <div class="owner-header">
+            Service, Maintenance and Parts  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "Service, Maintenance and Parts"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="o-box">
+            <div class="owner-header">
+            Ford Protect  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "Ford Protect"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="o-box">
+            <div class="owner-header">
+            Vehicle Support  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "Vehicle Support"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="o-box">
+            <div class="owner-header">
+            SYNC Support  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "SYNC Support"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="o-box">
+            <div class="owner-header">
+            Contact Us  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "Contact Us"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="o-box">
+            <div class="owner-header">
+            Ford Owner Profile  
+            </div>
+            <div class="owner-links-1">
+                @foreach (Link link in Model.Children<Link>()){
+                    @if(link.ReferenceList == "Ford Owner Profile"){
+                        <a class="link-owner" href="@link.LinkUrl">@link.LinkCaption</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
